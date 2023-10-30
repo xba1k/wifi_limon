@@ -1,0 +1,3 @@
+34:94:54:62:ad:b1 Big Blue 80Ah Cell 01
+34:94:54:62:ad:b2 Big Blue 80Ah Cell 01
+bc:dd:c2:b3:13:74 Test LiMon 01
