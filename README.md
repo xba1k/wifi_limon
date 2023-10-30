@@ -16,10 +16,10 @@ The code will run on all ESP8266 boards, but to utilize the deep sleep WAKE pin 
 
 Pinout:
 
-CH_EN -> 10K -> VCC
-RST -> GPIO16 (WAKE)
-GPIO0 -> 10K -> VCC
-GPIO15 -> 10K -> GND
+CH_EN -> 10K -> VCC  
+RST -> GPIO16 (WAKE)  
+GPIO0 -> 10K -> VCC  
+GPIO15 -> 10K -> GND  
 
 Important! ESP8266 can't accept more than 3.6V directly, a cell charged above 50% would damage it. For such reason VCC should be connected via a diode which will provide the necessary voltage drop. The code accounts for this drop in order to estimate the real cell voltage.
 
@@ -34,9 +34,23 @@ Example Python script is provided. The script has to run with root privileges in
 ```
 sudo tcpdump -e -n -A -x ip and udp and port 1080
 tcpdump: verbose output suppressed, use -v or -vv for full protocol decode
-listening on eno1, link-type EN10MB (Ethernet), capture size 262144 bytes```
+listening on eno1, link-type EN10MB (Ethernet), capture size 262144 bytes
+21:03:09.728784 34:94:54:62:ad:b1 > ff:ff:ff:ff:ff:ff, ethertype IPv4 (0x0800), length 60: 192.168.1.75.53437 > 255.255.255.255.1080: UDP, length 8
+        0x0000:  4500 0024 0003 0000 ff11 f9d2 c0a8 014b
+        0x0010:  ffff ffff d0bd 0438 0010 f3d1 ff04 0000
+        0x0020:  760e 0000 0000 0000 0000 0000 0000
+21:03:10.008129 34:94:54:62:ad:b1 > ff:ff:ff:ff:ff:ff, ethertype IPv4 (0x0800), length 60: 192.168.1.75.53437 > 255.255.255.255.1080: UDP, length 8
+        0x0000:  4500 0024 0004 0000 ff11 f9d1 c0a8 014b
+        0x0010:  ffff ffff d0bd 0438 0010 f3d1 ff04 0000
+        0x0020:  760e 0000 0000 0000 0000 0000 0000
+21:03:10.394349 34:94:54:62:ad:b1 > ff:ff:ff:ff:ff:ff, ethertype IPv4 (0x0800), length 60: 192.168.1.75.53437 > 255.255.255.255.1080: UDP, length 8
+        0x0000:  4500 0024 0005 0000 ff11 f9d0 c0a8 014b
+        0x0010:  ffff ffff d0bd 0438 0010 f3d1 ff04 0000
+        0x0020:  760e 0000 0000 0000 0000 0000 0000
+```
 
 ```
 sudo ./limon_receiver.py 
 waiting for reports...
+2023-10-29 21:03:09.731877 34:94:54:62:ad:b1/192.168.1.75 [Big Blue 80Ah Cell 01] volts: 3.70
 ```
