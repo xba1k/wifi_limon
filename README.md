@@ -21,6 +21,8 @@ RST -> GPIO16 (WAKE)
 GPIO0 -> 10K -> VCC
 GPIO15 -> 10K -> GND
 
+Important! ESP8266 can't accept more than 3.6V directly, a cell charged above 50% would damage it. For such reason VCC should be connected via a diode which will provide the necessary voltage drop. The code accounts for this drop in order to estimate the real cell voltage.
+
 ![alt text](https://github.com/xba1k/wifi_limon/blob/main/LiMon.jpg?raw=true)
 
 ## Receiver
