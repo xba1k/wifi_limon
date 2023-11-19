@@ -2,11 +2,11 @@
 #define ESP8266_H
 
 #include <Arduino.h>
-#include "settings.h"
-
 #include <ESP8266WiFi.h>
-#include <WiFiUdp.h>
 #include <IPAddress.h>
+#include <WiFiUdp.h>
+
+#include "settings.h"
 extern WiFiUDP Udp;
 
 int init_wifi();

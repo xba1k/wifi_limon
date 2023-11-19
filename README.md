@@ -6,7 +6,7 @@ If you're like me, you may have a bunch of Lithium Ion cells either laying aroun
 
 ## Setup
 
-This code was created using Eclipse IDE with Arduino plugin. Eclipse no longer maintains that plugin, and it's no longer available for download from Eclipse Marketplace. The code can be compiled using Arduino IDE by concatenating all project files. 
+This project was created using VSCode/PlatformIO.
 
 See settings.h for wifi credentials and various other parameters.
 
